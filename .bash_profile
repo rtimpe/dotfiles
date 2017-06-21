@@ -1,3 +1,7 @@
+if [ -f ~/.bashrc ]; then
+    source ~/.bashrc
+fi
+
 alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
