@@ -312,6 +312,10 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
   (setq mouse-wheel-progressive-speed nil)
+
+  (add-hook 'python-mode-hook '(lambda ()
+                                 (setq indent-tabs-mode nil)
+                                 (setq python-indent 4)))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
