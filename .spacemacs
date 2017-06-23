@@ -316,6 +316,8 @@ you should place your code here."
   (add-hook 'python-mode-hook '(lambda ()
                                  (setq indent-tabs-mode nil)
                                  (setq python-indent 4)))
+
+  (spacemacs/toggle-automatic-symbol-highlight-on)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
