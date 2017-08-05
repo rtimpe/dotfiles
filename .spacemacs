@@ -55,7 +55,11 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages
+   '(
+     flycheck
+     pyvenv
+     )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -316,6 +320,15 @@ you should place your code here."
   (add-hook 'python-mode-hook '(lambda ()
                                  (setq indent-tabs-mode nil)
                                  (setq python-indent 4)))
+
+  (add-hook 'python-mode '(lambda ()
+                            (flycheck-mode 1)
+                            (semantic-mode 1)
+                            (setq flycheck-checker 'python-pylint
+                                  flycheck-pylintrc "~/.pylintrc")))
+
+  (setenv "WORKON_HOME" "C:/Users/rotimpe/AppData/Local/Continuum/Anaconda3/envs")
+  (pyvenv-mode 1)
 
   (spacemacs/toggle-automatic-symbol-highlight-on)
   )
