@@ -314,22 +314,27 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
+  ;; scroll stuff
   (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
   (setq mouse-wheel-progressive-speed nil)
 
-  (add-hook 'python-mode-hook '(lambda ()
-                                 (setq indent-tabs-mode nil)
-                                 (setq python-indent 4)))
+  ;; python stuff
+  (add-hook 'python-mode-hook
+            (lambda ()
+              (setq indent-tabs-mode nil) ;; tab stuff
+              (setq python-indent-offset 4)
+              (setq tab-width 4)
 
-  (add-hook 'python-mode '(lambda ()
-                            (flycheck-mode 1)
-                            (semantic-mode 1)
-                            (setq flycheck-checker 'python-pylint
-                                  flycheck-pylintrc "~/.pylintrc")))
+              (flycheck-mode 1) ;; flycheck/pylint stuff
+              (semantic-mode 1)
+              (setq flycheck-checker 'python-pylint
+                    flycheck-pylintrc "~/.pylintrc")
+              ))
 
   (setenv "WORKON_HOME" "C:/Users/rotimpe/AppData/Local/Continuum/Anaconda3/envs")
   (pyvenv-mode 1)
 
+  ;; other stuff
   (spacemacs/toggle-automatic-symbol-highlight-on)
   )
 
