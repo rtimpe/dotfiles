@@ -49,7 +49,7 @@ values."
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      ;; spell-checking
-     ;; syntax-checking
+     syntax-checking
      ;; version-control
      )
    ;; List of additional packages that will be installed without being
@@ -58,7 +58,7 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages
    '(
-     flycheck
+     ;; flycheck
      pyvenv
      )
    ;; A list of packages that cannot be updated.
@@ -331,7 +331,6 @@ you should place your code here."
               (setq python-indent-offset 4)
               (setq tab-width 4)
 
-              (flycheck-mode 1) ;; flycheck/pylint stuff
               (semantic-mode 1)
               (setq flycheck-checker 'python-pylint
                     flycheck-pylintrc "~/.pylintrc")
