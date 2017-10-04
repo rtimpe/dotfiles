@@ -58,8 +58,6 @@ values."
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages
    '(
-     ;; flycheck
-     pyvenv
      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -335,7 +333,6 @@ you should place your code here."
               ))
 
   (setenv "WORKON_HOME" "C:/Users/rotimpe/AppData/Local/Continuum/Anaconda3/envs")
-  (pyvenv-mode 1)
 
   ;; other stuff
   (spacemacs/toggle-automatic-symbol-highlight-on)
