@@ -332,6 +332,9 @@ you should place your code here."
                     flycheck-pylintrc "~/.pylintrc")
               ))
 
+  ;; auto completion
+  (global-auto-complete-mode 1)
+
   (setenv "WORKON_HOME" "C:/Users/rotimpe/AppData/Local/Continuum/Anaconda3/envs")
 
   ;; other stuff
