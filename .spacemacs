@@ -42,8 +42,10 @@ values."
      better-defaults
      emacs-lisp
      themes-megapack
+     yaml
+     csv
      ;; git
-     ;; markdown
+     markdown
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
@@ -105,7 +107,7 @@ values."
    ;; with `:variables' keyword (similar to layers). Check the editing styles
    ;; section of the documentation for details on available variables.
    ;; (default 'vim)
-   dotspacemacs-editing-style 'emacs
+   dotspacemacs-editing-style 'hybrid
    ;; If non nil output loading progress in `*Messages*' buffer. (default nil)
    dotspacemacs-verbose-loading nil
    ;; Specify the startup banner. Default value is `official', it displays
@@ -315,6 +317,8 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
+  ;; make C-s only search file names in dired
+  (setq dired-isearch-filenames 't)
 
   ;; scroll stuff
   (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
