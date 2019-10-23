@@ -31,7 +31,14 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     javascript
+     yaml
+     csv
+     markdown
      python
+     c-c++
+     semantic
+     gtags
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -42,11 +49,8 @@ values."
      better-defaults
      emacs-lisp
      themes-megapack
-     yaml
-     csv
      ;; git
-     markdown
-     ;; org
+     org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -338,8 +342,15 @@ you should place your code here."
 
   ;; auto completion
   (global-auto-complete-mode 1)
+  (show-paren-mode)
 
-  (setenv "WORKON_HOME" "C:/Users/rotimpe/AppData/Local/Continuum/Anaconda3/envs")
+  ;; markdown - use pandoc to render markdown
+  (setq markdown-command
+        (concat
+         "pandoc"
+         " --from=markdown_github --to=html"
+         " --standalone --mathjax --highlight-style=pygments"
+         ))
 
   ;; other stuff
   (spacemacs/toggle-automatic-symbol-highlight-on)
