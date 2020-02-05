@@ -38,7 +38,7 @@ values."
      python
      c-c++
      semantic
-     gtags
+     (gtags :variables gtags-enable-by-default nil)
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -338,7 +338,9 @@ you should place your code here."
               (semantic-mode 1)
               (setq flycheck-checker 'python-pylint
                     flycheck-pylintrc "~/.pylintrc")
-              ))
+              (spacemacs/toggle-fill-column-indicator-on)
+              )
+            )
 
   ;; auto completion
   (global-auto-complete-mode 1)
