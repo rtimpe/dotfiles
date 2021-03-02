@@ -350,7 +350,7 @@ you should place your code here."
   (setq markdown-command
         (concat
          "pandoc"
-         " --from=markdown_github --to=html"
+         " --from=gfm --to=html"
          " --standalone --mathjax --highlight-style=pygments"
          ))
 
